@@ -1,0 +1,8 @@
+# Package Files #
+.svn
+
+# Eclipse project files
+build/
+node_modules/
+tmp/
+
