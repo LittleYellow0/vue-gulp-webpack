@@ -1,8 +1,6 @@
-# Package Files #
-.svn
+# project files
 
-# Eclipse project files
-build/
 node_modules/
-tmp/
+.sass-cache/
+
 
