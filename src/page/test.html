@@ -4,31 +4,27 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>组件</title>
+		<title>事件</title>
 		<meta name="keywords" content="" />
 		<meta name="description" content="" />
 		<!--
-		<link type="text/css" href="../css/component-1.css?rev=@@hash" rel="stylesheet" />
+		<link type="text/css" href="../css/test.css?rev=@@hash" rel="stylesheet" />
 		-->
 	</head>
 
 	<body>
-
-		<div id="box">
-			<ul>
-				<fizz-box v-for="(item, index) in groceryList" v-bind:t="index" v-bind:x="item" v-bind:key="index"></fizz-box>
-			</ul>
-		</div>
 		
-		<div id="cell">
+		
+		<section id="box-1">
 			<ul>
-				<todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+				<fizz v-for="(item, index) in groceryList" v-bind:t="index" v-bind:x="item" v-bind:key="index" card-code="88888"></fizz>
 			</ul>
-		</div>
+		</section>
 
 		<script type="text/javascript" src="../js/vendors/vue.js"></script>
 		<script type="text/javascript" src="../js/common.js?rev=@@hash"></script>
-		<script type="text/javascript" src="../js/component-1.js?rev=@@hash"></script>
+		<script type="text/javascript" src="../js/test.js?rev=@@hash"></script>
+
 	</body>
 
 </html>
