@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>事件</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<!--
+		<link type="text/css" href="../css/event.css?rev=@@hash" rel="stylesheet" />
+		-->
+	</head>
+
+	<body>
+
+		<section id="eventBox-1">
+			<button v-on:click="showData">{{ news }}</button> 
+			<button v-on:click="warn('aaa', $event)">发送到发</button>
+		</section>
+
+		<section id="eventBox-2">
+			<p>{{ message }}</p>
+			<input v-model="message" />
+		</section>
+
+		<script type="text/javascript" src="../js/vendors/vue.js"></script>
+		<script type="text/javascript" src="../js/common.js?rev=@@hash"></script>
+		<script type="text/javascript" src="../js/event.js?rev=@@hash"></script>
+	</body>
+
+</html>

@@ -4,23 +4,25 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>测试</title>
+		<title>组件</title>
 		<meta name="keywords" content="" />
 		<meta name="description" content="" />
-		<link type="text/css" href="../css/test.css?rev=@@hash" rel="stylesheet" />
+		<!--
+		<link type="text/css" href="../css/component-1.css?rev=@@hash" rel="stylesheet" />
+		-->
 	</head>
 
 	<body>
 
-       
-       <button id="btn">打哈哈</button>
-       
-		
-		
-		<script type="text/javascript" src="../js/vendors/mui.min.js"></script>
+		<div id="box">
+			<ul>
+				<todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+			</ul>
+		</div>
+
+		<script type="text/javascript" src="../js/vendors/vue.js"></script>
 		<script type="text/javascript" src="../js/common.js?rev=@@hash"></script>
-		<script type="text/javascript" src="../js/test.js?rev=@@hash"></script>
-		
+		<script type="text/javascript" src="../js/component-1.js?rev=@@hash"></script>
 	</body>
 
 </html>

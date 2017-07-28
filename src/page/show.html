@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>显示</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<!--
+		<link type="text/css" href="../css/show.css?rev=@@hash" rel="stylesheet" />
+		-->
+	</head>
+
+	<body>
+
+		<section>
+			<button id="update">更新数据</button> <button id="changeDes">更新des</button>
+		</section>
+
+		<section id="dataList">
+
+			<div v-for="(x,index) in news" v-if="index >= 1 && index <= 2" v-bind:class="index % 2 == 0 ? 'right' : 'left'" v-bind:href="'page.html?nid=' + x.nid | addCode">
+				<p v-bind:class="className">{{ index + 1 }}</p>
+				<p>{{ showValue }}</p>
+				<p>{{ readValue() }}</p>
+				<p>{{ x.news_ti | addCode }}</p>
+				<p>{{ des }}</p>
+				<p v-html="x.news_body"></p>
+				<p><img v-bind:src=x.news_pic /></p>
+			</div>
+
+			<template v-for="(value, key, index) in shop">
+				<h2>{{ index }} - {{ key }} _ {{ value }}</h2>
+				<p>{{ index }} - {{ key }} _ {{ value }}</p>
+			</template>
+
+			<div v-show="Math.random() > 0.5">SHOW</div>
+
+			<div v-if="Math.random() > 0.5">YES</div>
+			<div v-else>NO</div>
+
+			<template v-if="Math.random() > 0.5">
+				<!-- 添加key值会重新渲染元素 -->
+				<h1 key="yes-res">template-YES</h1>
+				<p>template-YES</p>
+			</template>
+			<template v-else>
+				<h1 key="no-res">template-NO</h1>
+				<p>template-NO</p>
+			</template>
+
+		</section>
+
+		<script type="text/javascript" src="../js/vendors/vue.js"></script>
+		<script type="text/javascript" src="../js/common.js?rev=@@hash"></script>
+		<script type="text/javascript" src="../js/show.js?rev=@@hash"></script>
+	</body>
+
+</html>
