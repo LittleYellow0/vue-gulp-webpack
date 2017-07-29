@@ -10,6 +10,30 @@
 		<!--
 		<link type="text/css" href="../css/component-1.css?rev=@@hash" rel="stylesheet" />
 		-->
+		<style type="text/css">
+			.full-a {
+				width: 100%;
+				height: 100px;
+				background: #e7344f;
+			}
+			
+			.full-b {
+				width: 100%;
+				height: 100px;
+				background: #e4fa53;
+			}
+			
+			.fade-enter-active,
+			.fade-leave-active {
+				transition: all .3s ease;
+			}
+			
+			.fade-enter,
+			.fade-leave-to {
+				transform: translateX(50px);
+				opacity: 0;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -19,11 +43,18 @@
 				<fizz-box v-for="(item, index) in groceryList" v-bind:t="index" v-bind:x="item" v-bind:key="index"></fizz-box>
 			</ul>
 		</div>
-		
+
 		<div id="cell">
 			<ul>
 				<todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
 			</ul>
+		</div>
+
+		<div id="wrap">
+			<button v-on:click="view = view == 'v-a' ? 'v-b' : 'v-a'">切换</button>
+			<transition name="fade" mode="out-in">
+				<component v-bind:is="view"></component>
+			</transition>
 		</div>
 
 		<script type="text/javascript" src="../js/vendors/vue.js"></script>

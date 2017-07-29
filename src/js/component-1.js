@@ -48,3 +48,19 @@ var vmCell = new Vue({
 		]
 	}
 });
+
+// 过渡组件
+var vmWrap = new Vue({
+  el: '#wrap',
+  data: {
+    view: 'v-a'
+  },
+  components: {
+    'v-a': {
+      template: '<div class="full-a">Component A</div>'
+    },
+    'v-b': {
+      template: '<div class="full-b">Component B</div>'
+    }
+  }
+})

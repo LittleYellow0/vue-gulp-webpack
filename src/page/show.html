@@ -10,6 +10,20 @@
 		<!--
 		<link type="text/css" href="../css/show.css?rev=@@hash" rel="stylesheet" />
 		-->
+		<style type="text/css">
+			.fade-enter-active,
+			.fade-leave-active {
+				transition: opacity .5s
+			}
+			
+			.fade-enter,
+			.fade-leave-to
+			/* .fade-leave-active in below version 2.1.8 */
+			
+			{
+				opacity: 0
+			}
+		</style>
 	</head>
 
 	<body>
@@ -40,17 +54,23 @@
 			<div v-if="Math.random() > 0.5">YES</div>
 			<div v-else>NO</div>
 
-			<template v-if="Math.random() > 0.5">
+			<template v-if="isShow">
 				<!-- 添加key值会重新渲染元素 -->
-				<h1 key="yes-res">template-YES</h1>
+				<transition name="fade">
+					<h1 key="yes-res">template-YES</h1>
+				</transition>
 				<p>template-YES</p>
 			</template>
 			<template v-else>
-				<h1 key="no-res">template-NO</h1>
+				<transition name="fade">
+					<h1 key="no-res">template-NO</h1>
+				</transition>
 				<p>template-NO</p>
 			</template>
 
 		</section>
+
+		<button id="changeShow">更新随机数</button>
 
 		<script type="text/javascript" src="../js/vendors/vue.js"></script>
 		<script type="text/javascript" src="../js/common.js?rev=@@hash"></script>

@@ -29,7 +29,8 @@ var vmhList = new Vue({
 			pick: false
 		},
 		info: "aaaaaa",
-		des: "bbbbbb"
+		des: "bbbbbb",
+		isShow: true
 	},
 	computed: {
 		showValue: function() { // 有get/set方法
@@ -69,6 +70,6 @@ document.querySelector("#update").onclick = function() {
 	]
 }
 
-document.querySelector("#changeDes").onclick = function() {
-	vmhList.info = "xxxx";
+document.querySelector("#changeShow").onclick = function() {
+	vmhList.isShow = Math.random() > 0.5;
 }
