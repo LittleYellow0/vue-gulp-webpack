@@ -1,5 +1,5 @@
-Vue.component("fizz-box",{
-	props: ["t","x"],
+Vue.component("fizz-box", {
+	props: ["t", "x"],
 	template: "<li>{{ t }} {{ x.name }}</li>"
 })
 
@@ -21,7 +21,6 @@ var vm = new Vue({
 		]
 	}
 });
-
 
 // 局部注册
 var vmCell = new Vue({
@@ -49,18 +48,18 @@ var vmCell = new Vue({
 	}
 });
 
-// 过渡组件
+// 过渡组件1
 var vmWrap = new Vue({
-  el: '#wrap',
-  data: {
-    view: 'v-a'
-  },
-  components: {
-    'v-a': {
-      template: '<div class="full-a">Component A</div>'
-    },
-    'v-b': {
-      template: '<div class="full-b">Component B</div>'
-    }
-  }
+	el: '#wrap',
+	data: {
+		view: 'v-a'
+	},
+	components: {
+		'v-a': {
+			template: '<div class="full-a">Component A</div>'
+		},
+		'v-b': {
+			template: '<div class="full-b">Component B</div>'
+		}
+	}
 })

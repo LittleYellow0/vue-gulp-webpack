@@ -70,6 +70,10 @@ document.querySelector("#update").onclick = function() {
 	]
 }
 
+document.querySelector("#changeDes").onclick = function() {
+	vmhList.info = "ppppp-";
+}
+
 document.querySelector("#changeShow").onclick = function() {
 	vmhList.isShow = Math.random() > 0.5;
 }

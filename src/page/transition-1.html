@@ -24,6 +24,24 @@
 				transform: translateX(50px);
 				opacity: 0;
 			}
+			
+			.list-item {
+				display: inline-block;
+				margin-right: 10px;
+			}
+			
+			.list-enter-active,
+			.list-leave-active {
+				transition: all 1s;
+			}
+			
+			.list-enter,
+			.list-leave-to
+			
+			{
+				opacity: 0;
+				transform: translateY(30px);
+			}
 		</style>
 	</head>
 
@@ -34,6 +52,14 @@
 			<transition name="slide-fade">
 				<p v-if="show">hello</p>
 			</transition>
+		</div>
+
+		<div id="list-demo" class="demo">
+			<button v-on:click="add">Add</button>
+			<button v-on:click="remove">Remove</button>
+			<transition-group name="list" tag="p">
+				<span v-for="item in items" v-bind:key="item" class="list-item">{{ item }}</span>
+			</transition-group>
 		</div>
 
 		<script type="text/javascript" src="../js/vendors/vue.js"></script>
