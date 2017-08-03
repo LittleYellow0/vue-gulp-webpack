@@ -27,8 +27,8 @@ var vmCell = new Vue({
 	el: '#cell',
 	components: {
 		'todo-item': {
-			props: ['todo'],
-			template: '<li>{{ todo.text }}</li>'
+			props: ['todo', 'myMessage'],
+			template: '<li>{{ todo.text }} {{ myMessage }}</li>'
 		}
 	},
 	data: {
